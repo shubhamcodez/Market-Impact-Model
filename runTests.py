@@ -3,7 +3,7 @@ import sys
 import unittest
 
 # Set the directory where the tests are located
-tests_dir = 'Tests/RegressionTest'
+tests_dir = 'Tests'
 
 loader = unittest.TestLoader()
 suite = loader.discover(start_dir=tests_dir, pattern='Test_*.py')
