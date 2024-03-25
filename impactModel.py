@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from scipy.optimize import minimize
+from scipy.optimize import curve_fit
 
 totalDailyValue = pd.read_csv("Input/totalDailyValueDf.csv")
 imbalance = pd.read_csv("Input/imbalanceDf.csv")
@@ -17,11 +17,31 @@ arrivalPrice.drop("Stock", axis=1, inplace=True)
 terminalPrice.drop("Stock", axis=1, inplace=True)
 dailyVol.drop("Stock", axis=1, inplace=True)
 
-# Define the function to compute temporary impact
-def temp_impact(params, X, V, sigma):
-    eta, beta = params
-    temporary_impact = eta * sigma * (X / (6*V/6.5)) ** beta 
-    return temporary_impact
+#compute rolling 10 day average of daily value
+avgDailyValue = totalDailyValue.copy()
+
+queue = []
+for c in totalDailyValue.columns:
+    #add new day
+    queue.append(totalDailyValue[c])
+
+
+    if len(queue) == 10:
+        avgDailyValue[c] = sum(queue) / 10
+
+        #remove the earliest day in the queue
+        queue.pop(0)
+    else:
+        avgDailyValue[c] = np.zeros_like(avgDailyValue.index)
+
+#we use the data from day 11 and onwards because the daily vol and average value are not avaliable before then
+totalDailyValue = totalDailyValue[totalDailyValue.columns[10:]]
+imbalance = imbalance[imbalance.columns[10:]]
+vwap330 = vwap330[vwap330.columns[10:]]
+arrivalPrice = arrivalPrice[arrivalPrice.columns[10:]]
+terminalPrice = terminalPrice[terminalPrice.columns[10:]]
+dailyVol = dailyVol[dailyVol.columns[10:]]
+avgDailyValue = avgDailyValue[avgDailyValue.columns[10:]]
 
 # Extract the required data for computation
 impact330 = vwap330 - arrivalPrice
@@ -30,29 +50,28 @@ permanent_impact = (terminalPrice - arrivalPrice)/2
 
 Y = (impact330 - permanent_impact)  # temp_impact
 X = imbalance
-V = totalDailyValue
+V = avgDailyValue
 
-# Replace infinite and NaN values with zeros
-X = X.replace([np.inf, -np.inf, np.nan], 0)
-V = V.replace([np.inf, -np.inf, np.nan], 0)
-Y = Y.replace([np.inf, -np.inf, np.nan], 0)
+# Replace infinite and NaN values with stock specific means
+Y = Y.apply(lambda row: row.fillna(row.mean()), axis=1)
 
-def mean_absolute_error(params, X, V, dailyVol, Y):
-    Ypred = temp_impact(params, X, V, dailyVol)
-    if Y.shape != Ypred.shape:
-        raise ValueError("Shapes of Y and Ypred are not equal")
+#perform the non-linear regression to minimize the sum of squared error
 
-    mae = np.mean((Y - Ypred))
-    return abs(mae)
+#stack the data to one column
+y = np.array(Y.stack())
+x = np.array((X / (6*V/6.5)).stack())
+sigma = np.array(dailyVol.stack())
 
-# Initial guess for eta and beta
-initial_guess = [0.1, 0.8] #expected 0.142, 0.6
+def temp_impact(x,eta,beta):
+    temporary_impact = eta * sigma * np.sign(x) * np.power(np.abs(x) , beta)
+    return temporary_impact
 
-# Minimize the mean absolute error
-result = minimize(mean_absolute_error, initial_guess, args=(X, V, dailyVol, Y), method='Nelder-Mead')
-# Get the estimated parameters
-eta, beta = result.x
+# Perform the curve fitting
+popt, pcov = curve_fit(temp_impact, x, y)
 
-# Print the estimated parameters
-print(f"Estimated eta: {eta}")
-print(f"Estimated beta: {beta}")
+# popt contains the optimal values for eta and beta
+eta_optimal = popt[0]
+beta_optimal = popt[1]
+
+#print the result
+print('Optimal eta: %.5f, Optimal beta: %.5f'%(eta_optimal,beta_optimal))

@@ -1,21 +1,12 @@
 import os
 import sys
 import unittest
-parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.append(parent_dir)
 
 # Set the directory where the tests are located
-tests_dir = 'Tests'
+tests_dir = 'Tests/RegressionTest'
 
-# Create a test suite
-suite = unittest.TestSuite()
-
-# Load all test cases from the Tests directory
 loader = unittest.TestLoader()
-for filename in os.listdir(tests_dir):
-    if filename.endswith('.py'):
-        test_module = loader.discover(tests_dir, pattern=filename)
-        suite.addTests(test_module)
+suite = loader.discover(start_dir=tests_dir, pattern='Test_*.py')
 
 # Run the test suite
 runner = unittest.TextTestRunner()
