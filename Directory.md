@@ -11,8 +11,7 @@ The folder contains 3 data folders:
    
 Directory Structure of the project goes as following:
 ATQSHW1/
-├── _pycache_
-├── Data
+├── Data/
 │   ├── arrivalPriceOf.csv
 │   ├── imbalanceOf.csv
 │   ├── midQuoteReturnsArrayOf.csv
@@ -20,33 +19,28 @@ ATQSHW1/
 │   ├── totalDailyValueOf.csv
 │   ├── vwap330Of.csv
 │   └── vwapCloseOf.csv
-├── impactUtils
-│   ├── _pycache_
-│   ├── FirstPriceBuckets
-│   │   ├── _pycache_
-│   │   ├── __init__.py
-│   │   └── FirstPriceBuckets.py
-│   ├── LastPriceBuckets
-│   ├── ReturnBuckets
-│   ├── TickTest
-│   └── VWAP
-├── Input
-├── Preprocessing
-│       ├── ArrivalPrice
-│         ├── _pycache_
-│         ├── __init__.py
-│         └── getArrivalPrice.py
-│       ├── DailyValue
-│       ├── Imbalance
-│       ├── MidQuoteReturns
-│       ├── TerminalPrice
-├── __init__.py
-├── quotes
-├── taq
-├── tests
-└── trades
-├── impactModel.py
-├── Inputs.py
-├── Lee's section of ATQS2024.mxm
-├── Preprocessing.py
-└── runTests.py
+├── impactUtils/
+│   ├── FirstPriceBuckets/
+│   │   └── __init__.py
+│   ├── LastPriceBuckets/
+│   ├── ReturnBuckets/
+│   ├── TickTest/
+│   └── VWAP/
+├── Input/
+├── Preprocessing/
+│   ├── ArrivalPrice/
+│   │   └── __init__.py
+│   ├── DailyValue/
+│   ├── Imbalance/
+│   ├── MidQuoteReturns/
+│   └── TerminalPrice/
+├── quotes/
+├── taq/
+├── tests/
+└── trades/
+impactModel.py
+Inputs.py
+Lee's section of ATQS2024.mxm
+Preprocessing.py
+runTests.py
+
