@@ -10,36 +10,47 @@ The folder contains 3 data folders:
 
    
 Directory Structure of the project goes as following:
-ATQSHW1/
-├── Data/
-│   ├── arrivalPriceOf.csv
-│   ├── imbalanceOf.csv
-│   ├── midQuoteReturnsArrayOf.csv
-│   ├── terminalPriceOf.csv
-│   ├── totalDailyValueOf.csv
-│   ├── vwap330Of.csv
-│   └── vwapCloseOf.csv
-├── impactUtils/
-│   ├── FirstPriceBuckets/
-│   │   └── __init__.py
-│   ├── LastPriceBuckets/
-│   ├── ReturnBuckets/
-│   ├── TickTest/
-│   └── VWAP/
-├── Input/
-├── Preprocessing/
-│   ├── ArrivalPrice/
-│   │   └── __init__.py
-│   ├── DailyValue/
-│   ├── Imbalance/
-│   ├── MidQuoteReturns/
-│   └── TerminalPrice/
-├── quotes/
-├── taq/
-├── tests/
-└── trades/
-impactModel.py
-Inputs.py
+ATQSHW1/ <br>
+├── _pycache_ <br>
+├── Data<br>
+│   ├── arrivalPriceOf.csv<br>
+│   ├── imbalanceOf.csv<br>
+│   ├── midQuoteReturnsArrayOf.csv<br>
+│   ├── terminalPriceOf.csv<br>
+│   ├── totalDailyValueOf.csv<br>
+│   ├── vwap330Of.csv<br>
+│   └── vwapCloseOf.csv<br>
+├── impactUtils<br>
+│   ├── _pycache_<br>
+│   ├── FirstPriceBuckets<br>
+│   │   ├── _pycache_<br>
+│   │   ├── __init__.py<br>
+│   │   └── FirstPriceBuckets.py<br>
+│   ├── LastPriceBuckets<br>
+│   ├── ReturnBuckets<br>
+│   ├── TickTest<br>
+│   └── VWAP<br>
+├── Input<br>
+├── Preprocessing<br>
+│       ├── ArrivalPrice<br>
+│         ├── _pycache_<br>
+│         ├── __init__.py<br>
+│         └── getArrivalPrice.py<br>
+│       ├── DailyValue<br>
+│       ├── Imbalance<br>
+│       ├── MidQuoteReturns<br>
+│       ├── TerminalPrice<br>
+├── __init__.py<br>
+├── quotes<br>
+├── taq<br>
+├── tests<br>
+└── trades<br>
+├── impactModel.py<br>
+├── Inputs.py<br>
+├── Lee's section of ATQS2024.mxm<br>
+├── Preprocessing.py<br>
+└── runTests.py<br>
+
 Lee's section of ATQS2024.mxm
 Preprocessing.py
 runTests.py
