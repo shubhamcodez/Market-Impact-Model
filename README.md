@@ -25,7 +25,27 @@ To run the code, follow these steps: <br>
 Install the required dependencies: `pip install -r requirements.txt` <br>
 Run the tests: `python runTests.py` <br>
 To preprocess and prepare data: `python Preprocessing.py` and `python Inputs.py` <br>
-Execute the main script: `python impactModel.py` <be>
+Execute the main script: `python impactModel.py` <br>
+
+Note: You need to have the raw TAQ dataset in your directory in order to run the preprocessing tests. 
+Only the parametric bootstrapping test for regression ([Test_regression.py](https://github.com/ssnyu/Market-Impact-Model/blob/main/Tests/Test_regression.py)) can be run without the raw dataset.
+
+## Results
+According to the non-linear regression equations:
+
+$$h = \eta * \sigma * (\frac{X}{VT})^\beta$$
+
+$h$: temporary impact
+$\sigma$: stock specific volatility
+$X$: Daily imbalance (value)
+$V$:Average daily value 
+$T$: time
+
+We discovered $\eta = 0.33244$, $\beta = 0.36127$.
+
+The analysis of the fit of the model are in [descriptiveStats.ipynb](https://github.com/ssnyu/Market-Impact-Model/blob/main/descriptiveStats.ipynb)
+
+
 
 ## Supplementary 
 
