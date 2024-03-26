@@ -53,5 +53,5 @@ The analysis of the fit of the model are in [descriptiveStats.ipynb](https://git
 
 ## Team Members
 
-- [Shubham Singh](https://github.com/ssnyu)
-- [Tianqi Wang](https://github.com/foggyleo)
+- [Shubham Singh](https://github.com/ssnyu) NetID: sks9437
+- [Tianqi Wang](https://github.com/foggyleo) NetID: tw2250
