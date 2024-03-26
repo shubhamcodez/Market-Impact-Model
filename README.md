@@ -21,12 +21,13 @@ The main objective is to build an impact model that can accurately estimate the 
 2. Use these variables as input for a non-linear regression to get eta and beta parameters in the temporary impact equation.
 
 ## Running the Code
-To run the code, follow these steps:
+To run the code, follow these steps: <br>
 
-Install the required dependencies: `pip install -r requirements.txt`
-Run the tests: `python runTests.py`
-To preprocess and prepare data: `python Preprocessing.py` and `python Inputs.py`
-Execute the main script: `python impactModel.py`
+Install the required dependencies: `pip install -r requirements.txt` <br>
+Run the tests: `python runTests.py` <br>
+To preprocess and prepare data: `python Preprocessing.py` and `python Inputs.py` <br>
+Execute the main script: `python impactModel.py` <br>
+
 ## Team Members
 
 - [Shubham Singh](https://github.com/ssnyu)
