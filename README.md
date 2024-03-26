@@ -26,7 +26,11 @@ To run the code, follow these steps: <br>
 Install the required dependencies: `pip install -r requirements.txt` <br>
 Run the tests: `python runTests.py` <br>
 To preprocess and prepare data: `python Preprocessing.py` and `python Inputs.py` <br>
-Execute the main script: `python impactModel.py` <br>
+Execute the main script: `python impactModel.py` <be>
+
+## Supplementary 
+
+### Directory structure - [Directory.ReadME](
 
 ## Team Members
 
