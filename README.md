@@ -30,7 +30,7 @@ Execute the main script: `python impactModel.py` <be>
 
 ## Supplementary 
 
-### Directory structure - [Directory.ReadME](
+### Directory structure - [Directory.ReadME](https://github.com/ssnyu/Market-Impact-Model/blob/main/Directory.md)
 
 ## Team Members
 
