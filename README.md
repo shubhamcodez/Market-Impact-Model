@@ -24,4 +24,4 @@ The main objective is to build an impact model that can accurately estimate the 
 ## Team Members
 
 - [Shubham Singh](https://github.com/ssnyu)
-- [Tianqi Wang](https://github.com/frogglyleo)
+- [Tianqi Wang](https://github.com/froggyleo)
