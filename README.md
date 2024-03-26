@@ -20,6 +20,9 @@ The main objective is to build an impact model that can accurately estimate the 
 1. Preprocess data to obtain daily value traded, volatility, imbalance, terminal, and arrival price.
 2. Use these variables as input for a non-linear regression to get eta and beta parameters in the temporary impact equation.
 
+## Running the Code
+
+`pip install numpy`
 
 ## Team Members
 
