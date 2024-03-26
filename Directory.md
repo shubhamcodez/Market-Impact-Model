@@ -13,13 +13,13 @@ Directory Structure of the project goes as following:
 ATQSHW1/ <br>
 ├── _pycache_ <br>
 ├── Data<br>
-│   ├── arrivalPriceOf.csv<br>
-│   ├── imbalanceOf.csv<br>
-│   ├── midQuoteReturnsArrayOf.csv<br>
-│   ├── terminalPriceOf.csv<br>
-│   ├── totalDailyValueOf.csv<br>
-│   ├── vwap330Of.csv<br>
-│   └── vwapCloseOf.csv<br>
+│   ├── arrivalPriceDf.csv<br>
+│   ├── imbalanceDf.csv<br>
+│   ├── midQuoteReturnsArrayDf.csv<br>
+│   ├── terminalPriceDf.csv<br>
+│   ├── totalDailyValueDf.csv<br>
+│   ├── vwap330Df.csv<br>
+│   └── vwapCloseDf.csv<br>
 ├── impactUtils<br>
 │   ├── _pycache_<br>
 │   ├── FirstPriceBuckets<br>
