@@ -4,7 +4,7 @@
 
 This project aims to develop an impact model for algorithmic trading and quantitative strategies, inspired by Almgren et al.'s "Direct Estimation of Equity Market Impact." The model focuses on predicting the impact of trading activities on stock prices, utilizing data from the TAQ dataset and employing techniques to filter high volatility days.
 
-Reference: [Direct Estimation of Equity Market Impact (https://www.cis.upenn.edu/~mkearns/finread/costestim.pdf)
+Reference: [Direct Estimation of Equity Market Impact](https://www.cis.upenn.edu/~mkearns/finread/costestim.pdf)
 
 ## Objective
 
