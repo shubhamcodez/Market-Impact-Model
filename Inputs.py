@@ -58,7 +58,7 @@ def compute_volatility(midQuoteReturnsArrayDf):
         # Calculate rolling standard deviation with the specified window size
         rolling_std = row.rolling(window=window_size).std()
         # Scale the standard deviation to daily values
-        scaled_std = rolling_std * 195
+        scaled_std = rolling_std * np.sqrt(195)
         stds.append(scaled_std)
     
     # Concatenate the list of scaled standard deviations into a DataFrame
